@@ -61,11 +61,11 @@ export default function PublicCardPage() {
   return (
     <main className="p-8 max-w-4xl">
       <h1 className="mb-4 text-2xl font-semibold">
-        {name ? `${name}’s 2026 Bingo Card` : 'Bingo Card'}
+        {name ? `${name}’s 2026 Bingo Board` : 'Bingo Board'}
       </h1>
 
       <p className="mb-4 text-sm text-gray-500">
-        Public, read-only view
+        Public, read-only board
       </p>
 
       <div className="grid grid-cols-5 gap-2">
