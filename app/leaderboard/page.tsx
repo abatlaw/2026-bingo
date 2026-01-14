@@ -36,7 +36,7 @@ export default function LeaderboardPage() {
       </h1>
 
       <p className="mb-4 text-sm text-gray-500">
-        Click a name to view their bingo card
+        Click a name to view their bingo board
       </p>
 
       <div className="divide-y rounded border">
