@@ -27,17 +27,27 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    if (!session) return
+    if (!session?.user) {
+      setCardId(null)
+      return
+    }
 
     supabase
       .from('bingo_cards')
       .select('id')
       .eq('year', 2026)
+      .eq('user_id', session.user.id)
       .single()
-      .then(({ data }) => {
-        if (data) setCardId(data.id)
+      .then(({ data, error }) => {
+        if (error) {
+          // No card yet → expected for new users
+          setCardId(null)
+        } else {
+          setCardId(data.id)
+        }
       })
   }, [session])
+
 
   if (!session) {
     return (
